@@ -1,16 +1,18 @@
 from django.db import models
 
 
-# """CREATE TABLE posts(id serial primary key autoincrement, title varchar(256), content varchar(856), rate int);"""
+"""CREATE TABLE posts(id serial primary key autoincrement, title varchar(256), content varchar(856), rate int);"""
 
 
-# """
-# all objects - SELECT * FROM prost ==> Post.objects.all()
+"""
+all objects - SELECT * FROM prost ==> Post.objects.all()
 
-# fitltered objects - SELECT * FROM post WHERE  title ILIKE("title") ==> Post.objects.filter(title_icontains="title)
+fitltered objects - SELECT * FROM post WHERE  title ILIKE("title") ==> Post.objects.filter(title_icontains="title)
 
-# one object - SELECT * FROM post WHERE id=1 ==> Post.objects.get(id=1)
-# """
+one object - SELECT * FROM post WHERE id=1 ==> Post.objects.get(id=1)
+
+create object - INSERT INTO posts (title, content) VALUES('title', 'content') ==> Post.object.create(title='12312312', content="e329878924") 
+"""
 
 class Category(models.Model):
     name = models.CharField(max_length=256)
