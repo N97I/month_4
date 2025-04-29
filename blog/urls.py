@@ -21,9 +21,11 @@ from posts.views import (
     home_page_view, 
     post_list_view, 
     post_detail_view, 
-    post_create_view
+    post_create_view,
+    post_update_view,
+    post_delete_view,
 )
-from users.views import register_view, login_view, logout_view
+from users.views import register_view, login_view, logout_view, profile_view
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -34,7 +36,10 @@ urlpatterns = [
     path('posts/', post_list_view),
     path('posts/<int:post_id>/', post_detail_view),
     path("posts/create/", post_create_view),
+    path('posts/<int:post_id>/update/', post_update_view),
+    path('posts/<int:post_id>/delete/', post_delete_view),
     path('register/', register_view),
     path('login/', login_view),
-    path('logout', logout_view),
+    path('logout/', logout_view),
+    path('profile/',profile_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

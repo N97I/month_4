@@ -26,7 +26,7 @@ class PostForm(forms.Form):
 class PostForm2(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', "category", 'tags']
+        fields = ['image', 'title', 'content', "category", 'tags']
 
     def clean(self):
         cleaned_data = super().clean()

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 """CREATE TABLE posts(id serial primary key autoincrement, title varchar(256), content varchar(856), rate int);"""
@@ -36,6 +37,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     tags = models.ManyToManyField(Tag)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
 
